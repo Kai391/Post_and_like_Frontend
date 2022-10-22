@@ -16,7 +16,7 @@ const PostCard = ({ likes = false, name='',likedUser=[],handleLike=()=>null,id=0
     else handleLike((data)=>[...data.filter(i=>i!==id)])
   },[liked])
   return (
-    <Card>
+    <Card sx={{width:{xs:0.9,sm:550,md:700},mb:1,mt:1}}>
       <CardContent>
         <Typography variant='h4'>{name}</Typography>
         <Box sx={{display:'flex', alignItems:'center'}}>

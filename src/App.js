@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import { serverReq } from './helper'
+import Footer from './components/Footer'
 
 const BASE_URL = 'http://localhost:3001'
 
@@ -133,7 +134,7 @@ const App = ({ myname }) => {
         height: '80vh',
         flexDirection: 'column'
       }}>
-        <TextField variant='standard' label="Search post here..." onChange={autoSearch} />
+        <TextField variant='standard' label="Search post here..." onChange={autoSearch} sx={{width:{xs:0.9,sm:550,md:700}}} color="primary" />
         {!searchMsg?posts.slice(pageno * 2 - 2, pageno * 2)
           .map(obj => (
             <PostCard
@@ -153,6 +154,7 @@ const App = ({ myname }) => {
           <CustomPagination totalPages={totalPages} changePageApi={handleChangePage} />
         </Box>
       </Box>
+      <Footer/>
     </>
   )
 }
